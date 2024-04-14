@@ -147,8 +147,6 @@ unsigned int KTNS(Data& data, vec<int>& chromosome) {
     unsigned int tool = 0;
     double minVal;
 
-    // Fills auxiliary vector W_n that corresponds to the
-    // matrix row at instant n
     for (unsigned int i = 0; i < data.numTools; i++) {
         if (data.L[i][0] == 0) {
             data.W_n[i] = 1;

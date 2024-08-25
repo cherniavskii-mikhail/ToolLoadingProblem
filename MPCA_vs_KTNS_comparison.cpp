@@ -340,13 +340,13 @@ double ktns_time(string dataset_path, string prem_file_path) {
     ifstream fin(dataset_path);
     assert(fin && "dataset file not found");
 
-    fin > > n > > m > > C;
+    fin >> n >> m >> C;
     cout << "alg=" << func_to_test_name << ", n=" << n << ", m=" << m << ", C=" << C << ", file=" << dataset_path << ".\n";
     vec<vec<int> > jobsToolsMatrix(n, vec<int>(m, -1));
     int a;
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            fin > > jobsToolsMatrix[j][i];
+            fin >> jobsToolsMatrix[j][i];
         }
     }
     fin.close();
@@ -358,12 +358,12 @@ double ktns_time(string dataset_path, string prem_file_path) {
     ifstream fin2(prem_file_path);
     assert(fin2 && "permutation file not found");
     int n_premuts;
-    fin2 > > n_premuts;
+    fin2 >> n_premuts;
     vec<vec<int> > quest(n_premuts, vec<int>(n, -1));
 
     for (int i = 0; i < n_premuts; i++) {
         for (int j = 0; j < n; j++) {
-            fin2 > > quest[i][j];
+            fin2 >> quest[i][j];
         }
     }
     fin2.close();
@@ -382,8 +382,8 @@ double ktns_time(string dataset_path, string prem_file_path) {
 double dataset_time(string folde_name, string dataset) {
     string dir = "./";
     dir += folde_name + "/";
-    string ABCD = string{ dataset[0] };
-    string capacity_banchmark_index = string{ dataset[1] };
+    string ABCD = string() + dataset[0];
+    string capacity_banchmark_index = string() + dataset[1];
 
 
     double summary_time = 0;

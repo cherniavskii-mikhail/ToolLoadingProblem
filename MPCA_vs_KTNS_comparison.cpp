@@ -7,7 +7,6 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <bitset>
-#include <intrin.h>
 #include <algorithm>
 #include <stdlib.h>
 #include <math.h>
@@ -83,7 +82,7 @@ struct Data {
         jobs_pairs_intersect.assign(numJobs, vec<int>(numJobs, 0));
         for (int i = 0; i < numJobs; i++) {
             for (int j = 0; j < numJobs; j++) {
-                jobs_pairs_intersect[i][j] = (int)__popcnt64(jobnum_to_bytes[i] & jobnum_to_bytes[j]);
+                jobs_pairs_intersect[i][j] = (int)__builtin_popcountll(jobnum_to_bytes[i] & jobnum_to_bytes[j]);
             }
         }
 
@@ -226,7 +225,7 @@ unsigned int MPCA_bitwise(Data& data, vec<int>& chromosome) {
             intersect = data.cromosome_bytes[start] & end_tools;
             if (intersect > 0) {
                 end_tools = end_tools & (~intersect);
-                int tubes_count = (int)__popcnt64(intersect);
+                int tubes_count = (int)__builtin_popcountll(intersect);
                 if (tubes_count > min_free) { tubes_count = min_free; }
                 if (tubes_count > 0) {
                     for (int j = start + 1; j < end; j++) {
@@ -286,7 +285,7 @@ unsigned int KTNS_bitwise(Data& data, vec<int>& chromosome) {
     candidates = 0;
     int candidates_count = 0;
     for (int i = 0; i < data.numJobs; i++) {
-        to_add_count = (int)__popcnt64(data.cromosome_bytes[i] & ~candidates);
+        to_add_count = (int)__builtin_popcountll(data.cromosome_bytes[i] & ~candidates);
         if (candidates_count + to_add_count < data.magCapacity) {
             candidates |= data.cromosome_bytes[i];
             candidates_count += to_add_count;
@@ -300,21 +299,21 @@ unsigned int KTNS_bitwise(Data& data, vec<int>& chromosome) {
 
     for (int s = 1; s < data.numJobs; s++) {
         now = M[s - 1] | data.cromosome_bytes[s];
-        remove_count = (int)__popcnt64(now) - data.magCapacity;
+        remove_count = (int)__builtin_popcountll(now) - data.magCapacity;
         if (remove_count == 0) {
             M[s] = now;
             continue;
         }
         else if (remove_count < 0) { cout << "error remove_count < 0 \n"; throw 1; }
         candidates = now & ~data.cromosome_bytes[s];
-        to_keep_count = (int)__popcnt64(candidates) - remove_count;
+        to_keep_count = (int)__builtin_popcountll(candidates) - remove_count;
         for (int e = s + 1; e <= data.numJobs; e++) {
             if (e == data.numJobs) {
-                M[s] |= remove_ones(candidates, (int)__popcnt64(candidates) - to_keep_count);
+                M[s] |= remove_ones(candidates, (int)__builtin_popcountll(candidates) - to_keep_count);
                 break;
             }
             intersect = candidates & data.cromosome_bytes[e];
-            intersect_count = (int)__popcnt64(intersect);
+            intersect_count = (int)__builtin_popcountll(intersect);
             if (intersect_count < to_keep_count) {
                 to_keep_count -= intersect_count;
                 M[s] |= intersect;
@@ -329,7 +328,7 @@ unsigned int KTNS_bitwise(Data& data, vec<int>& chromosome) {
 
     int sw = 0;
     for (int i = 0; i < data.numJobs - 1; i++) {
-        sw += (int)__popcnt64(M[i + 1] & ~M[i]);
+        sw += (int)__builtin_popcountll(M[i + 1] & ~M[i]);
     }
     return sw;
 }
@@ -424,6 +423,8 @@ void ktns_tca_time() {
 
 
 int main() {
+    
+    
     std::cout << std::fixed << std::setprecision(5);
     std::ofstream output_file; output_file.open(OUTPUT_FILE, std::ofstream::out | std::ofstream::trunc); output_file.close();
 

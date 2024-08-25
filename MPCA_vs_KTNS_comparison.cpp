@@ -398,7 +398,10 @@ double dataset_time(string folde_name, string dataset) {
 
 
 void ktns_tca_time() {
-    vec<string> datasets = {"A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4", "D1", "D2", "D3", "D4"};
+    vec<string> datasets;
+    for(auto v : {"A","B","C","D"})
+        for(auto u : {"1","2","3","4"})
+            datasets.push_back(string() + v + u);
     unordered_map<string, double> time_dict;
 
     

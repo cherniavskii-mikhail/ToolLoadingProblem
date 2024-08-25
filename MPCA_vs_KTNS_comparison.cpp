@@ -20,9 +20,9 @@ using namespace std;
 const string OUTPUT_FILE = "results.txt"; 
 
 struct Data {
-    vec<vec<int>> jobsToolsMatrix;
-    vec<vec<int>> L;
-    vec<vec<int>> loadedMatrix;
+    vec<vec<int> > jobsToolsMatrix;
+    vec<vec<int> > L;
+    vec<vec<int> > loadedMatrix;
     int numJobs, numTools, magCapacity;
     vec<int> used;
     vec<int> W_n;
@@ -34,21 +34,21 @@ struct Data {
     vec<unsigned long long> cromosome_bytes;
     vec<int> jobnum_to_free;
     vec<unsigned long long> jobnum_to_bytes;
-    vec<vec<int>> jobs_pairs_intersect;
+    vec<vec<int> > jobs_pairs_intersect;
 
-    vec<vec<int>> jobnum_to_tools_list;
-    vec<vec<int>> cromosome_jobnum_to_tools_list;
+    vec<vec<int> > jobnum_to_tools_list;
+    vec<vec<int> > cromosome_jobnum_to_tools_list;
     vec<int> last_seen_tool;
     vec<int> usedToFullMag;
-    vec<vec<int>> MAGAZINE;
-    vec<vec<int>> H_1_MAG;
-    vec<vec<int>> tool_in_i_not_in_prev;
-    vec<unordered_set<int>> MAG_SETS;
-    vec<unordered_set<int>> T_SETS;
+    vec<vec<int> > MAGAZINE;
+    vec<vec<int> > H_1_MAG;
+    vec<vec<int> > tool_in_i_not_in_prev;
+    vec<unordered_set<int> > MAG_SETS;
+    vec<unordered_set<int> > T_SETS;
     vec<int> empty_vec;
-    vec<vec<int>> tool_in_i_not_in_prev_start;
-    vec<vec<int>> MN;
-    Data(int numJobs_arg, int numTools_arg, int magCapacity_arg, vec<vec<int>>& jobsToolsMatrix_arg)
+    vec<vec<int> > tool_in_i_not_in_prev_start;
+    vec<vec<int> > MN;
+    Data(int numJobs_arg, int numTools_arg, int magCapacity_arg, vec<vec<int> >& jobsToolsMatrix_arg)
         :numJobs(numJobs_arg),
         numTools(numTools_arg),
         magCapacity(magCapacity_arg),
@@ -340,13 +340,13 @@ double ktns_time(string dataset_path, string prem_file_path) {
     ifstream fin(dataset_path);
     assert(fin && "dataset file not found");
 
-    fin >> n >> m >> C;
+    fin > > n > > m > > C;
     cout << "alg=" << func_to_test_name << ", n=" << n << ", m=" << m << ", C=" << C << ", file=" << dataset_path << ".\n";
-    vec<vec<int>> jobsToolsMatrix(n, vec<int>(m, -1));
+    vec<vec<int> > jobsToolsMatrix(n, vec<int>(m, -1));
     int a;
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            fin >> jobsToolsMatrix[j][i];
+            fin > > jobsToolsMatrix[j][i];
         }
     }
     fin.close();
@@ -358,12 +358,12 @@ double ktns_time(string dataset_path, string prem_file_path) {
     ifstream fin2(prem_file_path);
     assert(fin2 && "permutation file not found");
     int n_premuts;
-    fin2 >> n_premuts;
-    vec<vec<int>> quest(n_premuts, vec<int>(n, -1));
+    fin2 > > n_premuts;
+    vec<vec<int> > quest(n_premuts, vec<int>(n, -1));
 
     for (int i = 0; i < n_premuts; i++) {
         for (int j = 0; j < n; j++) {
-            fin2 >> quest[i][j];
+            fin2 > > quest[i][j];
         }
     }
     fin2.close();

@@ -380,16 +380,16 @@ double ktns_time(string dataset_path, string prem_file_path) {
 
 
 double dataset_time(string folde_name, string dataset) {
-    string dir = "./";
-    dir += folde_name + "/";
+    string dir = ".\\";
+    dir += folde_name + "\\";
     string ABCD = string() + dataset[0];
     string capacity_banchmark_index = string() + dataset[1];
 
 
     double summary_time = 0;
     for (int instance_num = 1; instance_num <= 10; instance_num++) {
-        string dataset_path = dir + "Tabela" + capacity_banchmark_index + "/dat" + ABCD + to_string(instance_num);
-        string prem_file_path = dir + "Tabela" + capacity_banchmark_index + "/permuts" + ABCD;
+        string dataset_path = dir + "Tabela" + capacity_banchmark_index + "\\dat" + ABCD + to_string(instance_num);
+        string prem_file_path = dir + "Tabela" + capacity_banchmark_index + "\\permuts" + ABCD;
         summary_time += ktns_time(dataset_path, prem_file_path);
     }
     return summary_time;

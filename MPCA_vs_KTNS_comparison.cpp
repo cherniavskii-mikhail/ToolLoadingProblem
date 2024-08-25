@@ -336,7 +336,7 @@ unsigned int KTNS_bitwise(Data& data, vec<int>& chromosome) {
 
 double ktns_time(string dataset_path, string prem_file_path) {
     int n = -1, m = -1, C = -1;
-        
+    std::cout << dataset_path << "<<<<<\n";
     ifstream fin(dataset_path);
     assert(fin && "dataset file not found");
 

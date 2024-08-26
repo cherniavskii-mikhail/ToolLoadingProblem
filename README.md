@@ -1,7 +1,7 @@
 # ToolLoadingProblem
 Comparison of MPCA and KTNS algorithms for the Tool Loading Problem
 
-Code files, benchmark files and README file also available at https://github.com/cherniavskii-mikhail/ToolLoadingProblem
+Source code, benchmark files and README file also available at https://github.com/cherniavskii-mikhail/ToolLoadingProblem
 
 A draft of the paper available at https://arxiv.org/abs/2205.06042
 

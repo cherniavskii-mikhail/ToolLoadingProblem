@@ -63,7 +63,7 @@ struct Data {
         jobnum_to_bytes.assign(numJobs, 0LL);
         for (int i = 0; i < numJobs; i++) {
             string str = "";
-            for (auto v : jobsToolsMatrix[i]) { str += to_string(v); }
+            for (int v : jobsToolsMatrix[i]) { str += to_string(v); }
             jobnum_to_bytes[i] = bitset<64>(str).to_ullong();
         }
         cromosome_bytes.assign(numJobs, 0LL);
@@ -102,7 +102,7 @@ struct Data {
         MAG_SETS.assign(numTools, unordered_set<int>());
         T_SETS.assign(numTools, unordered_set<int>());
         for (int i = 0; i < numJobs; i++) {
-            for (auto& tool : jobnum_to_tools_list[i]) {
+            for (int& tool : jobnum_to_tools_list[i]) {
                 T_SETS[i].insert(tool);
             }
         }
@@ -380,16 +380,16 @@ double ktns_time(string dataset_path, string prem_file_path) {
 
 
 double dataset_time(string folde_name, string dataset) {
-    string dir = ".\\";
-    dir += folde_name + "\\";
+    string dir = "./";
+    dir += folde_name + "/";
     string ABCD = string() + dataset[0];
     string capacity_banchmark_index = string() + dataset[1];
 
 
     double summary_time = 0;
     for (int instance_num = 1; instance_num <= 10; instance_num++) {
-        string dataset_path = dir + "Tabela" + capacity_banchmark_index + "\\dat" + ABCD + to_string(instance_num);
-        string prem_file_path = dir + "Tabela" + capacity_banchmark_index + "\\permuts" + ABCD;
+        string dataset_path = dir + "Tabela" + capacity_banchmark_index + "/dat" + ABCD + to_string(instance_num);
+        string prem_file_path = dir + "Tabela" + capacity_banchmark_index + "/permuts" + ABCD;
         summary_time += ktns_time(dataset_path, prem_file_path);
     }
     return summary_time;
@@ -399,12 +399,12 @@ double dataset_time(string folde_name, string dataset) {
 
 void ktns_tca_time() {
     vec<string> datasets;
-    for(auto v : "ABCD")
-        for(auto u : "1234")
-            datasets.push_back(string() + v + u);
-    unordered_map<string, double> time_dict;
+    datasets.push_back("A1"); datasets.push_back("A2"); datasets.push_back("A3"); datasets.push_back("A4");
+    datasets.push_back("B1"); datasets.push_back("B2"); datasets.push_back("B3"); datasets.push_back("B4");
+    datasets.push_back("C1"); datasets.push_back("C2"); datasets.push_back("C3"); datasets.push_back("C4");
+    datasets.push_back("D1"); datasets.push_back("D2"); datasets.push_back("D3"); datasets.push_back("D4");
 
-    
+    unordered_map<string, double> time_dict;
     ofstream output_file;
     output_file.open("results.txt", ios::app);
 
@@ -421,8 +421,6 @@ void ktns_tca_time() {
 
 
 int main() {
-    
-    
     std::cout << std::fixed << std::setprecision(5);
     std::ofstream output_file; output_file.open(OUTPUT_FILE, std::ofstream::out | std::ofstream::trunc); output_file.close();
 

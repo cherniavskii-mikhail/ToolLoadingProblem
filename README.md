@@ -5,6 +5,12 @@ Code files, benchmark files and README file also available at https://github.com
 
 A draft of the paper available at https://arxiv.org/abs/2205.06042
 
+Abbreviations:
+1) TLP - the Tool Loading Problem
+2) SSP - the job Sequencing and tool Switching Problem
+3) KTNS - Keep Tool Needed Soonest algorithm
+4) MPCA - Max Pipe Construction Algorithm
+
 Structure:
 
 1) MPCA_vs_KTNS_comparison.cpp contains C++ code for comparison of MPCA and KTNS algorithms.

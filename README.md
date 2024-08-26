@@ -7,14 +7,14 @@ A draft of the paper available at https://arxiv.org/abs/2205.06042
 
 Structure:
 
-1) IGA_vs_KTNS_comparison.cpp contains C++ code for comparison of MPCA and KTNS algorithms.
+1) MPCA_vs_KTNS_comparison.cpp contains C++ code for comparison of MPCA and KTNS algorithms.
 2) Folder Catanzaro contains classical benchmark instances for the Job Sequencing and Tool Switching Problem introduced in https://doi.org/10.1016/j.ejor.2015.02.018
 3) README.md (this file)
 
 To reproduce the computational results:
 
-1) Compile IGA_vs_KTNS_comparison.cpp. To compile run: g++ MPCA_vs_KTNS_comparison.cpp -o MPCA_vs_KTNS_comparison.exe -O3
-2) Run compiled IGA_vs_KTNS_comparison.exe.
+1) Compile MPCA_vs_KTNS_comparison.cpp. To compile run: g++ MPCA_vs_KTNS_comparison.cpp -o MPCA_vs_KTNS_comparison.exe -O3
+2) Run compiled MPCA_vs_KTNS_comparison.exe.
 3) Open results.txt to see results. Compare results with the Table in Section Experimental results of the manuscript.
 
 
@@ -26,7 +26,7 @@ Format of benchmark Tool Loading Problem instances:
 
 Other well known benchmark instances (Catanzaro, Crama, Yanasse, Mecler) for the SSP and TLP are available at https://github.com/jordanamecler/HGS-SSP/tree/master.
 
-IGA_vs_KTNS_comparison.cpp description:
+MPCA_vs_KTNS_comparison.cpp description:
 
 1) KTNS() is an implementation of the Keep Tool Needed Soonest algortihm by Jordana Mecler, Anand Subramanian, Thibaut Vidal, see https://doi.org/10.1016/j.cor.2020.105153. We use KTNS() asa "base-line" algorithm to compare it with our algorithms MPCA(), MPCA_bitwise() and our bitwise implementation of KTNS called KTNS_bitwise().
 2) MPCA() is our new Max Pipe Construction Algorithm proposed in the manuscript.

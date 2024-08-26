@@ -41,5 +41,7 @@ MPCA_vs_KTNS_comparison.cpp description:
 5) algorithms_verefication function runs 10^5 random tests to verify that KTNS, MPCA, KTNS_bitwise, MPCA_bitwise give the same output.
 6) Experiments structure is designed to run computational experiments, i.e. enumerate problem instances, read data from files, execute algorithms, measure the time spent on calculations, write cumputational results to file results.txt.
 7) TLP_Data structure is a container for a TLP instance data.
-8) remove_ones is an auxiliary function for KTNS_bitwise.
+8) remove_ones is an auxiliary function for KTNS_bitwise and MPCA_bitwise.
+9) KTNS, MPCA, KTNS_bitwise, MPCA_bitwise return a pair (switches, solution), where switches is the optimal objective function value and solution is an optimal solution of the TLP instance.
+10) TLP_Data structure has method print_solution() that prints current solution. Uncomment line "// tlp_data.print_solution();" in KTNS, MPCA, KTNS_bitwise, MPCA_bitwise to see solutions.
 

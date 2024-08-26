@@ -379,6 +379,11 @@ void algorithms_verefication() {
 }
 
 struct Experiments{
+    /*
+        Run computational experiments for the given algorithm, i.e. enumerate problem instances, 
+        read data from files, execute algorithm, measure the time spent on calculations, 
+        write cumputational results to file results.txt.
+    */
     unsigned int(*alg_for_test)(TLP_Data&);
     std::string alg_for_test_name;
 
@@ -392,7 +397,7 @@ struct Experiments{
             generated random job sequences and returns total time spent.
         */
 
-    //read TLP data from file
+        //read TLP data from file
         int n = -1, m = -1, C = -1;
         std::ifstream fin(TLP_instance_path);
         fin >> n >> m >> C;
@@ -450,7 +455,7 @@ struct Experiments{
             Triggers running tests and writes test results to a file results.txt.
         */
 
-    // list of datasets
+        // list of datasets
         std::vector<std::string> datasets;
         datasets.push_back("A1"); datasets.push_back("A2"); datasets.push_back("A3"); datasets.push_back("A4");
         datasets.push_back("B1"); datasets.push_back("B2"); datasets.push_back("B3"); datasets.push_back("B4");
@@ -497,7 +502,3 @@ int main() {
 
     return 0;
 }
-
-
-
-

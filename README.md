@@ -11,9 +11,11 @@ Structure:
 2) Folder Catanzaro contains classical benchmark instances for the Job Sequencing and Tool Switching Problem introduced in https://doi.org/10.1016/j.ejor.2015.02.018
 3) README.md file
 
-To compile run:
-
-g++ MPCA_vs_KTNS_comparison.cpp -o MPCA_vs_KTNS_comparison.exe -O3
+To reproduce the computational results:
+1) compile IGA_vs_KTNS_comparison.cpp
+  To compile run:
+  g++ MPCA_vs_KTNS_comparison.cpp -o MPCA_vs_KTNS_comparison.exe -O3
+2) 
 
 
 

@@ -13,9 +13,12 @@ Structure:
 
 To reproduce the computational results:
 1) compile IGA_vs_KTNS_comparison.cpp
+   
   To compile run:
+  
   g++ MPCA_vs_KTNS_comparison.cpp -o MPCA_vs_KTNS_comparison.exe -O3
-2) 
+  
+3) 
 
 
 

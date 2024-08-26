@@ -12,13 +12,10 @@ Structure:
 3) README.md file
 
 To reproduce the computational results:
-1) compile IGA_vs_KTNS_comparison.cpp
-   
-  To compile run:
-  
-  g++ MPCA_vs_KTNS_comparison.cpp -o MPCA_vs_KTNS_comparison.exe -O3
-  
-3) 
+
+1) Compile IGA_vs_KTNS_comparison.cpp. To compile run: g++ MPCA_vs_KTNS_comparison.cpp -o MPCA_vs_KTNS_comparison.exe -O3
+2) Run compiled IGA_vs_KTNS_comparison.exe.
+3) Open results.txt to see results. 
 
 
 

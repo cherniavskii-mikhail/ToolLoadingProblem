@@ -38,7 +38,7 @@ MPCA_vs_KTNS_comparison.cpp description:
 2) MPCA() is our new Max Pipe Construction Algorithm proposed in the manuscript.
 3) MPCA_bitwise() is our bitwise implementation of MPCA.
 4) KTNS_bitwise() is our bitwise implementation of KTNS.
-5) algorithms_verefication() functon runs 10^5 random tests to verify that KTNS, MPCA, KTNS_bitwise, MPCA_bitwise give the same output.
+5) Experiments structure runs 10^5 random tests to verify that KTNS, MPCA, KTNS_bitwise, MPCA_bitwise give the same output.
 6) run_tests() dataset_time() instance_time() functions are designed for run computational experiments, i.e. enumerate problem instances, read data from files, execute algorithms, measure the time spent on calculations, write cumputational results to file results.txt.
 7) TLP_Data structure is a container for a TLP instance data.
 8) remove_ones() is an auxiliary function for KTNS_bitwise.

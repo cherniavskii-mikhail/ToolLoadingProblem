@@ -34,8 +34,8 @@ Other well known benchmark instances (Catanzaro, Crama, Yanasse, Mecler) for the
 
 MPCA_vs_KTNS_comparison.cpp description:
 
-1) KTNS function is an implementation of the Keep Tool Needed Soonest algortihm by Jordana Mecler, Anand Subramanian, Thibaut Vidal, see https://doi.org/10.1016/j.cor.2020.105153. We use KTNS as a "base-line" algorithm to compare it with our algorithms MPCA, MPCA_bitwise and our bitwise implementation of KTNS called KTNS_bitwise.
-2) MPCA function is our new Max Pipe Construction Algorithm proposed in the manuscript.
+1) KTNS function is an implementation of the KTNS algortihm by Jordana Mecler, Anand Subramanian, Thibaut Vidal, see https://doi.org/10.1016/j.cor.2020.105153. We use KTNS as a "base-line" algorithm to compare it with our algorithms MPCA, MPCA_bitwise and our bitwise implementation of KTNS called KTNS_bitwise.
+2) MPCA function is our new MPCA proposed in the manuscript.
 3) MPCA_bitwise function is our bitwise implementation of MPCA.
 4) KTNS_bitwise function is our bitwise implementation of KTNS.
 5) algorithms_verefication function runs 10^5 random tests to verify that KTNS, MPCA, KTNS_bitwise, MPCA_bitwise give the same output.

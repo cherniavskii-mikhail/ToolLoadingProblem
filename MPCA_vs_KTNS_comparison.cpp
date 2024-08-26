@@ -185,9 +185,8 @@ unsigned int MPCA_bitwise(TLP_Data& data, std::vector<int>& job_seqence) {
     int fullmag = -1;
 
     for (int end = 1; end < data.numJobs; end++) {
-        int end_minus_1 = end - 1;
-        if (data.job_seqence_free[end_minus_1] == 0) { fullmag = end_minus_1; }
-        end_tools = data.job_seqence_bytes[end] & (~data.job_seqence_bytes[end_minus_1]);
+        if (data.job_seqence_free[end - 1] == 0) { fullmag = end - 1; }
+        end_tools = data.job_seqence_bytes[end] & (~data.job_seqence_bytes[end - 1]);
         int min_free = 99999;
         for (int start = end - 2; start >= 0; start--) {
             if (fullmag > start || end_tools == 0LL) { break; }

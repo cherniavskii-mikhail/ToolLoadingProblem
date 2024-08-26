@@ -9,7 +9,7 @@ Structure:
 
 1) IGA_vs_KTNS_comparison.cpp contains C++ code for comparison of MPCA and KTNS algorithms.
 2) Folder Catanzaro contains classical benchmark instances for the Job Sequencing and Tool Switching Problem introduced in https://doi.org/10.1016/j.ejor.2015.02.018
-3) README.md file
+3) README.md (this file)
 
 To reproduce the computational results:
 

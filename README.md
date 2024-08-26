@@ -15,7 +15,7 @@ To reproduce the computational results:
 
 1) Compile IGA_vs_KTNS_comparison.cpp. To compile run: g++ MPCA_vs_KTNS_comparison.cpp -o MPCA_vs_KTNS_comparison.exe -O3
 2) Run compiled IGA_vs_KTNS_comparison.exe.
-3) Open results.txt to see results. Compare results with Table 6 in Section EXPERIMENTAL RESULTS of the manuscript.
+3) Open results.txt to see results. Compare results with the Table in Section Experimental results of the manuscript.
 
 
 Format of benchmark Tool Loading Problem instances:

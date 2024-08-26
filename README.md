@@ -8,8 +8,8 @@ A draft of the paper available at https://arxiv.org/abs/2205.06042
 Abbreviations:
 1) TLP - the Tool Loading Problem
 2) SSP - the job Sequencing and tool Switching Problem
-3) KTNS - Keep Tool Needed Soonest algorithm
-4) MPCA - Max Pipe Construction Algorithm
+3) KTNS - Keep Tool Needed Soonest algorithm (proposed by Christopher Tang, Eric Denardo, see https://doi.org/10.1287/opre.36.5.767)
+4) MPCA - Max Pipe Construction Algorithm (proposed by the authors of the manuscript)
 
 Structure:
 
@@ -37,7 +37,7 @@ MPCA_vs_KTNS_comparison.cpp description:
 1) KTNS() is an implementation of the Keep Tool Needed Soonest algortihm by Jordana Mecler, Anand Subramanian, Thibaut Vidal, see https://doi.org/10.1016/j.cor.2020.105153. We use KTNS() asa "base-line" algorithm to compare it with our algorithms MPCA(), MPCA_bitwise() and our bitwise implementation of KTNS called KTNS_bitwise().
 2) MPCA() is our new Max Pipe Construction Algorithm proposed in the manuscript.
 3) MPCA_bitwise() is our bitwise implementation of MPCA.
-4) KTNS_bitwise() is our bitwise implementation of the Keep Tool Needed Soonest algortihm proposed by by Christopher Tang, Eric Denardo, see https://doi.org/10.1287/opre.36.5.767.
+4) KTNS_bitwise() is our bitwise implementation of KTNS.
 5) algorithms_verefication() functon runs 10^5 random tests to verify that KTNS, MPCA, KTNS_bitwise, MPCA_bitwise give the same output.
 6) run_tests() dataset_time() instance_time() functions are designed for run computational experiments, i.e. enumerate problem instances, read data from files, execute algorithms, measure the time spent on calculations, write cumputational results to file results.txt.
 7) TLP_Data structure is a container for a TLP instance data.

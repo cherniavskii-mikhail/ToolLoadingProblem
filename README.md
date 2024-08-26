@@ -1,5 +1,5 @@
 # ToolLoadingProblem
-Comparison of MPCA and KTNS algorithms for the Tool Loading Problem
+Comparison of Max Pipe Construction Algorithm (MPCA) and Keep Tool Needed Soonest (KTNS) algorithms for the Tool Loading Problem
 
 Source code, benchmark files and README file also available at https://github.com/cherniavskii-mikhail/ToolLoadingProblem.
 

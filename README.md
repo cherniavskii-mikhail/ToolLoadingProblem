@@ -24,4 +24,5 @@ Format of benchmark Tool Loading Problem instances:
 3) The third line contains a single integer C - the capacity of the magaz
 4) After the third line there is a 0-1 matrix of size M x N, where element in pisition (i,j) equals 1 if tool j is needed for job i, and 0 otherwise. 
 
+Other well known benchmark datasets (Catanzaro, Crama, Yanasse, Mecler) for the SSP and TLP are available at https://github.com/jordanamecler/HGS-SSP/tree/master.
 

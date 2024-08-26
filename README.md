@@ -34,12 +34,12 @@ Other well known benchmark instances (Catanzaro, Crama, Yanasse, Mecler) for the
 
 MPCA_vs_KTNS_comparison.cpp description:
 
-1) KTNS() is an implementation of the Keep Tool Needed Soonest algortihm by Jordana Mecler, Anand Subramanian, Thibaut Vidal, see https://doi.org/10.1016/j.cor.2020.105153. We use KTNS() as a "base-line" algorithm to compare it with our algorithms MPCA(), MPCA_bitwise() and our bitwise implementation of KTNS called KTNS_bitwise().
-2) MPCA() is our new Max Pipe Construction Algorithm proposed in the manuscript.
-3) MPCA_bitwise() is our bitwise implementation of MPCA.
-4) KTNS_bitwise() is our bitwise implementation of KTNS.
-5) Experiments structure runs 10^5 random tests to verify that KTNS, MPCA, KTNS_bitwise, MPCA_bitwise give the same output.
-6) run_tests() dataset_time() instance_time() functions are designed for run computational experiments, i.e. enumerate problem instances, read data from files, execute algorithms, measure the time spent on calculations, write cumputational results to file results.txt.
+1) KTNS function is an implementation of the Keep Tool Needed Soonest algortihm by Jordana Mecler, Anand Subramanian, Thibaut Vidal, see https://doi.org/10.1016/j.cor.2020.105153. We use KTNS as a "base-line" algorithm to compare it with our algorithms MPCA, MPCA_bitwise and our bitwise implementation of KTNS called KTNS_bitwise.
+2) MPCA function is our new Max Pipe Construction Algorithm proposed in the manuscript.
+3) MPCA_bitwise function is our bitwise implementation of MPCA.
+4) KTNS_bitwise function is our bitwise implementation of KTNS.
+5) algorithms_verefication function runs 10^5 random tests to verify that KTNS, MPCA, KTNS_bitwise, MPCA_bitwise give the same output.
+6) Experiments structure is designed to run computational experiments, i.e. enumerate problem instances, read data from files, execute algorithms, measure the time spent on calculations, write cumputational results to file results.txt.
 7) TLP_Data structure is a container for a TLP instance data.
-8) remove_ones() is an auxiliary function for KTNS_bitwise.
+8) remove_ones is an auxiliary function for KTNS_bitwise.
 
